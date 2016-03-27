@@ -8,6 +8,9 @@ apt-get install build-essential -y > /dev/null
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
 
+echo "[+] Install fish-shell"
+apt-get install fish -y > /dev/null
+
 echo "[+] Install git"
 apt-get install git -y > /dev/null
 
@@ -27,21 +30,26 @@ debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password_again
 apt-get update
 apt-get install mariadb-server -y > /dev/null
 
-echo "[+] Setting mysql pass to devpass and using .my.cnf in homefolder"
+echo "[+] Setting mysql pass to devpass, using .my.cnf in homefolder and creating devwordpress database"
+mysql -uroot -pPASS -e "CREATE DATABASE devwordpress"
 mysql -uroot -pPASS -e "SET PASSWORD = PASSWORD('devpass');"
 
-echo "[+] Installing php-fpm and update nginx"
-sudo apt-get install php5-fpm -y
+echo "[+] Installing php-fpm, modules and update nginx"
+sudo apt-get install php5-fpm php5-common php5-dev php5-mcrypt php5-gd php5-mysql php5-cli php5-curl php5-xdebug -y > /dev/null
 mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 cp /vagrant_data/nginx.default.conf /etc/nginx/sites-available/default
 cp /vagrant_data/nginx.info.php /usr/share/nginx/html/info.php
 service nginx restart
 
-echo "[+] Installing wordpress"
-curl -L -O "http://wordpress.org/latest.tar.gz"
-tar -zxvf latest.tar.gz
+echo "[+] Installing and downloading latest wordpress"
+curl -s -L -O "http://wordpress.org/latest.tar.gz" > /dev/null
+tar -zxf latest.tar.gz
 rm latest.tar.gz
-mv wordpress/ /usr/share/nginx/html/
+mv wordpress/ /usr/share/nginx/html/wp
+cp /vagrant_data/wordpress.default.config /usr/share/nginx/html/wp/wp-config.php
+chown -R root:www-data /usr/share/nginx/html/wp
+chmod -R g+w /usr/share/nginx/html/wp
+chmod -R g+x /usr/share/nginx/html/wp
 
 echo "[+] Setup wordpress"
 service nginx restart
