@@ -42,7 +42,6 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "source", "/vagrant_wp"
   config.vm.synced_folder "files", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
@@ -72,4 +71,7 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", path: "vm.bootstrap.sh"
+
+  # after provisioning, sync the wordpress folder, which is named source
+  config.vm.synced_folder "source", "/usr/share/nginx/html/wordpress/wp-content/themes/devwordpress"
 end

@@ -45,11 +45,11 @@ echo "[+] Installing and downloading latest wordpress"
 curl -s -L -O "http://wordpress.org/latest.tar.gz" > /dev/null
 tar -zxf latest.tar.gz
 rm latest.tar.gz
-mv wordpress/ /usr/share/nginx/html/wp
-cp /vagrant_data/wordpress.default.config /usr/share/nginx/html/wp/wp-config.php
-chown -R root:www-data /usr/share/nginx/html/wp
-chmod -R g+w /usr/share/nginx/html/wp
-chmod -R g+x /usr/share/nginx/html/wp
+cp -R wordpress/* /usr/share/nginx/html/wordpress/
+cp /vagrant_data/wordpress.default.config /usr/share/nginx/html/wordpress/wp-config.php
+chown -R root:www-data /usr/share/nginx/html/wordpress
+chmod -R g+w /usr/share/nginx/html/wordpress
+chmod -R g+x /usr/share/nginx/html/wordpress
 
 echo "[+] Setup wordpress"
 service nginx restart
