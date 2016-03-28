@@ -1,6 +1,8 @@
 
 Vagrant Dev
-====================
+=====================
+
+Zenifywordpress dev env is a vagrant based development enviroment for wordpress
 
 TOUSE
 ---------------------
