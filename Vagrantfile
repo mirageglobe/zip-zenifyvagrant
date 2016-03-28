@@ -42,7 +42,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "files", "/vagrant_data"
+  config.vm.synced_folder "vmsharefiles", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -73,5 +73,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "vm.bootstrap.sh"
 
   # after provisioning, sync the wordpress folder, which is named source
-  config.vm.synced_folder "source", "/usr/share/nginx/html/wordpress/wp-content/themes/devwordpress"
+
+  config.vm.synced_folder "vmsharesource/wptheme", "/usr/share/nginx/html/wordpress/wp-content/themes/devwptheme"
+
+  config.vm.synced_folder "vmsharesource/wpthemechild", "/usr/share/nginx/html/wordpress/wp-content/themes/devwpthemechild"
 end
