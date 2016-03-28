@@ -1,8 +1,10 @@
 
-Vagrant Dev
+Zenify WP Dev
 =====================
 
-Zenifywordpress dev env is a vagrant based development enviroment for wordpress
+Author : Jimmy MG Lim <mirageglobe@gmail.com>
+
+Zenifywordpress dev env is a vagrant based development enviroment for wordpress. 
 
 TOUSE
 ---------------------
