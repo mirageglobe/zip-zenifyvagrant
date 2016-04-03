@@ -3,6 +3,7 @@ Zenify WP Dev
 =====================
 
 Author : Jimmy MG Lim <mirageglobe@gmail.com>
+
 Company : Dracoturtur
 
 Zenifywordpress dev env is a vagrant based development enviroment for wordpress. 
