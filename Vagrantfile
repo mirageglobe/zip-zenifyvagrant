@@ -74,7 +74,8 @@ Vagrant.configure(2) do |config|
 
   # after provisioning, sync the wordpress folder, which is named source
 
-  config.vm.synced_folder "vmsharesource/wptheme", "/usr/share/nginx/html/wordpress/wp-content/themes/devwptheme"
+  #config.vm.synced_folder "vmsharesource/zenifywordpress-master", "/usr/share/nginx/html/wordpress/wp-content/themes/devwptheme"
+  #config.vm.synced_folder "vmsharesource/zenifywordpress-child", "/usr/share/nginx/html/wordpress/wp-content/themes/devwpthemechild"
+  config.vm.synced_folder "vmsharesource/themes", "/usr/share/nginx/html/wordpress/wp-content/themes"
 
-  config.vm.synced_folder "vmsharesource/wpthemechild", "/usr/share/nginx/html/wordpress/wp-content/themes/devwpthemechild"
 end
