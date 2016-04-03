@@ -2,9 +2,9 @@
 Zenify WP Dev
 =====================
 
-Author : Jimmy MG Lim <mirageglobe@gmail.com>
-
-Company : Dracoturtur
+- Author : Jimmy MG Lim <mirageglobe@gmail.com>
+- Company : Dracoturtur
+- License : Apache 2.0
 
 Zenifywordpress dev env is a vagrant based development enviroment for wordpress. 
 
