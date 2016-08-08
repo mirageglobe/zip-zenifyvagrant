@@ -1,2 +1,4 @@
 .vagrant/
-vmsharesource/
+vmsharesource/*
+!*.gitkeep
+
