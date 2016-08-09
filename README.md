@@ -11,6 +11,12 @@ Zenifywordpress dev env is a vagrant based development enviroment for wordpress.
 TOUSE
 ---------------------
 
+Requirements:
+
+- Vagrant 1.9+
+- Virtualbox 5.0+
+- Git 2.7+
+
 To setup:
 
 > git clone ...... <this repo>
