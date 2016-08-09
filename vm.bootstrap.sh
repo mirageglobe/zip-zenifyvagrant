@@ -8,8 +8,8 @@ apt-get install build-essential -y > /dev/null
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
 
-echo "[+] Install fish-shell"
-apt-get install fish -y > /dev/null
+echo "[+] Install vim"
+apt-get install vim -y > /dev/null
 
 echo "[+] Install git"
 apt-get install git -y > /dev/null
@@ -53,3 +53,4 @@ chmod -R g+x /usr/share/nginx/html/wordpress
 
 echo "[+] Setup wordpress"
 service nginx restart
+
