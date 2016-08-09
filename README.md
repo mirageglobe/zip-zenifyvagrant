@@ -11,6 +11,18 @@ Zenifywordpress dev env is a vagrant based development enviroment for wordpress.
 TOUSE
 ---------------------
 
+To setup:
+
+> git clone ...... <this repo>
+
+> cd <this repo>/vmsharesource/themes
+
+you should clone your theme repo (such as zenifywordpress) into themes and it should look like the following
+
+- /vmsharesource/themes/zenifywordpress
+- /vmsharesource/themes/twentytwelve
+- ...
+
 To start:
 
 > $bash vagrant.run.sh
