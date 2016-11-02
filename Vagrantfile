@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
 
     zwp.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
-      vb.name = "zenifywordpress"
+      vb.name = "zenifywordpress-devenv"
     end
 
     zwp.vm.hostname = "zwp.localdev"
