@@ -1,57 +1,84 @@
-
 # ZenifyWP devenv #
 
-- Author : Jimmy MG Lim <mirageglobe@gmail.com>
-- License : Apache 2.0
+- author/site : Jimmy MG Lim (mirageglobe@gmail.com) / www.mirageglobe.com
+- source : https://github.com/mirageglobe/zenifywp-devenv
 
 Zenifywp dev env is a vagrant based development enviroment for wordpress. its a simple to use, preconfigured ubuntubox that loads up a fully working latest copy of wordpress. as a developer, all that is needed is your theme file cloned into vmsharesource/themes. a few samples can be seen in there already.
 
-# TOUSE
+# To use #
 
-Requirements:
+ensure that the following dependancies are present,
+- vagrant 1.9+
+- virtualbox 5.0+
+- git 2.7+
 
-- Vagrant 1.9+
-- Virtualbox 5.0+
-- Git 2.7+
+to setup, clone this repo
+```
+  $ git clone git@github.com:mirageglobe/zenifywp-devenv.git
+```
 
-To setup:
+then go into the folder (which is a separate git repo)
+```
+  $ cd pathtorepo/vmsharesource/themes
+```
 
-> git clone ...... <this repo>
+in this folder, clone your theme repo (such as zenifywp) into themes and it should look like the following
+```
+  $ ../pathtorepo/vmsharesource/themes/zenifywp
+  $ ../pathtorepo/vmsharesource/themes/twentytwelve
+```
 
-> cd <this repo>/vmsharesource/themes
+to start the autobuild
+```
+  $ sh vagrant.run.sh
+```
 
-you should clone your theme repo (such as zenifywp) into themes and it should look like the following
+if you update the vmbootstrap.sh file, you can refresh the vagrantvm by:
+```
+  $ sh vagrant.refresh.sh
+```
 
-- /vmsharesource/themes/zenifywp
-- /vmsharesource/themes/twentytwelve
-- ...
+# Guidelines #
 
-To start:
+a few points to note before submitting PR :
 
-> $ sh vagrant.run.sh
-
-If you update the vmbootstrap.sh file, you can refresh the vagrantvm by:
-
-> $ sh vagrant.refresh.sh
-
-# NOTES
+- ensure this is tested on debian (as indicated in vagrantfile)
 
 ## installation fails with virtual box guest additions
 
 if installation fails for vagrant, vb guest plugin will need to be installed.
 ref: https://stackoverflow.com/questions/22717428/vagrant-error-failed-to-mount-folders-in-linux-guest
-
-$ vagrant plugin install vagrant-vbguest
+```
+  $ vagrant plugin install vagrant-vbguest
+```
 
 and then reload
-
+```
 $ sh vagrant.refresh.sh
 $ sh vagrant.run.sh
+```
 
-# TODO
+# Roadmap #
 
 - update to use debian stretch box - curl need to be installed and mariadb keys need to be changed
 - [done] copy and sync mysql login data - http://serverfault.com/questions/103412/how-to-change-my-mysql-root-password-back-to-empty/103423#103423
 - [done] copy and install wordpress
 - [done] sync the folder from host to guest
 
+# License
+
+Copyright 2015 Jimmy MG Lim (mirageglobe@gmail.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+License Breakdown: https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)
