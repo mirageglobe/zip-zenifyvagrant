@@ -21,11 +21,11 @@ Vagrant.configure(2) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # zenify wordpress default vagrant box
-  config.vm.define "zenifywordpress", primary: true do |zwp|
+  config.vm.define "zenifywp", primary: true do |zwp|
 
     zwp.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
-      vb.name = "zenifywordpress-devenv"
+      vb.name = "zenifywp-devenv"
     end
 
     zwp.vm.hostname = "zwp.localdev"
