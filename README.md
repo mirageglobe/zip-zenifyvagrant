@@ -43,6 +43,8 @@ if you update the vmbootstrap.sh file, you can refresh the vagrantvm by:
 a few points to note before submitting PR :
 
 - ensure this is tested on debian (as indicated in vagrantfile)
+- ensure that themecheck plugin is installed and run against the theme
+- upload the themecheck xml in vmsourcefiles and import into your wordpress to test
 
 ## installation fails with virtual box guest additions
 
@@ -61,6 +63,7 @@ $ sh vagrant.run.sh
 # Roadmap #
 
 - update to use debian stretch box - curl need to be installed and mariadb keys need to be changed
+- [done] added themecheck test data
 - [done] copy and sync mysql login data - http://serverfault.com/questions/103412/how-to-change-my-mysql-root-password-back-to-empty/103423#103423
 - [done] copy and install wordpress
 - [done] sync the folder from host to guest
