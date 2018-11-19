@@ -62,6 +62,7 @@ $ sh vagrant.run.sh
 
 # Roadmap #
 
+- add option switch for footer helper navigations i.e. top / home / prev next
 - update to use debian stretch box - curl need to be installed and mariadb keys need to be changed
 - [done] added themecheck test data
 - [done] copy and sync mysql login data - http://serverfault.com/questions/103412/how-to-change-my-mysql-root-password-back-to-empty/103423#103423
