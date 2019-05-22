@@ -28,9 +28,9 @@ in this folder, clone your theme repo (such as zenifywp) into themes and it shou
   $ ../pathtorepo/vmsharesource/themes/twentytwelve
 ```
 
-to start the autobuild
+to start the server
 ```
-  $ sh vagrant.run.sh
+make run
 ```
 
 if you update the vmbootstrap.sh file, you can refresh the vagrantvm by:

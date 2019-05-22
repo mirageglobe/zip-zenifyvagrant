@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "debian/stretch64"
   config.vm.box_check_update = true
 
   # hotfix for tty warning
@@ -32,10 +32,10 @@ Vagrant.configure(2) do |config|
     zwp.vm.network "forwarded_port", guest: 80, host: 8080
     zwp.vm.network "private_network", ip: "192.168.10.10", netmask: "255.255.255.0", auto_config: true
 
-    zwp.vm.provision "shell", path: "vm.bootstrap.sh"
+    zwp.vm.provision "shell", path: "vmsharefiles/vm.bootstrap.sh"
 
     zwp.vm.synced_folder "vmsharefiles", "/vagrant_data"
-    zwp.vm.synced_folder "vmsharesource/themes", "/usr/share/nginx/html/wordpress/wp-content/themes"
+    zwp.vm.synced_folder "vmsharesource", "/usr/share/nginx/html/wordpress/wp-content/themes"
   end
 
   # after provisioning, sync the wordpress folder, which is named source

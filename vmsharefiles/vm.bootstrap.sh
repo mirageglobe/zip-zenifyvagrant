@@ -4,6 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "[+] Install common dependancies"
 apt-get install build-essential -y > /dev/null
+apt-get install curl -y > /dev/null
 
 apt-get update > /dev/null
 apt-get upgrade -y > /dev/null
@@ -21,10 +22,9 @@ echo "[+] Install mysql / mariadb 10.0"
 
 cp /vagrant_data/mariadb.my.cnf ~/.my.conf
 
-apt-get install software-properties-common -y
-apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-#sudo add-apt-repository 'deb [arch=amd64,i386] http://lon1.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main'
-add-apt-repository 'deb [arch=amd64,i386] http://lon1.mirrors.digitalocean.com/mariadb/repo/10.0/ubuntu trusty main'
+apt-get install software-properties-common dirmngr -y
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
+add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirrors.coreix.net/mariadb/repo/10.3/debian stretch main'
 debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password password PASS'
 debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password_again password PASS'
 apt-get update
@@ -35,7 +35,8 @@ mysql -uroot -pPASS -e "CREATE DATABASE devwordpress"
 mysql -uroot -pPASS -e "SET PASSWORD = PASSWORD('devpass');"
 
 echo "[+] Installing php-fpm, modules and update nginx"
-sudo apt-get install php5-fpm php5-common php5-dev php5-mcrypt php5-gd php5-mysql php5-cli php5-curl php5-xdebug -y > /dev/null
+# sudo apt-get install php5-fpm php5-common php5-dev php5-mcrypt php5-gd php5-mysql php5-cli php5-curl php5-xdebug -y > /dev/null
+sudo apt-get install php-fpm php-common php-dev php-mcrypt php-gd php-mysql php-cli php-curl php-xdebug -y > /dev/null
 mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 cp /vagrant_data/nginx.default.conf /etc/nginx/sites-available/default
 cp /vagrant_data/nginx.info.php /usr/share/nginx/html/info.php
