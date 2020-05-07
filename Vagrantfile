@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
       vb.name = "zenifywp-devenv"
     end
 
-    zwp.vm.hostname = "zwp.localdev"
+    zwp.vm.hostname = "zwp.local"
     zwp.vm.network "forwarded_port", guest: 80, host: 8080
     zwp.vm.network "private_network", ip: "192.168.10.10", netmask: "255.255.255.0", auto_config: true
 
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
 
   # after provisioning, sync the wordpress folder, which is named source
 
-  #config.vm.synced_folder "vmsharesource/zenifywordpress-master", "/usr/share/nginx/html/wordpress/wp-content/themes/devwptheme"
-  #config.vm.synced_folder "vmsharesource/zenifywordpress-child", "/usr/share/nginx/html/wordpress/wp-content/themes/devwpthemechild"
+  #config.vm.synced_folder "vmsharesource/zenifywp", "/usr/share/nginx/html/wordpress/wp-content/themes/devwptheme"
+  #config.vm.synced_folder "vmsharesource/zenifywp-child", "/usr/share/nginx/html/wordpress/wp-content/themes/devwpthemechild"
 
 end
