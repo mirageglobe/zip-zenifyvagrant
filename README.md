@@ -1,9 +1,9 @@
-# ZenifyWP devenv #
+# ZenifyVagrant #
 
 - author/site : Jimmy MG Lim (mirageglobe@gmail.com) / www.mirageglobe.com
-- source : https://github.com/mirageglobe/zenifywp-devenv
+- source : https://github.com/mirageglobe/zenifyvagrant
 
-Zenifywp dev env is a vagrant based development enviroment for wordpress. its a simple to use, preconfigured ubuntubox that loads up a fully working latest copy of wordpress. as a developer, all that is needed is your theme file cloned into vmsharesource/themes. a few samples can be seen in there already.
+ZenifyVagrant is a vagrant based development enviroment for wordpress and other projects. it is simple to use, preconfigured debian box that loads up a fully working of wordpress as an example. as a developer, all that is needed is your theme file cloned into vmsharesource/themes. a few samples can be seen in there already.
 
 # To use #
 
