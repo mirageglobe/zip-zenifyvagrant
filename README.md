@@ -1,5 +1,7 @@
 # ZenifyVagrant #
 
+this project is archived and integrated into zenifywp ( https://github.com/mirageglobe/zenifywp )
+
 - author/site : Jimmy MG Lim (mirageglobe@gmail.com) / www.mirageglobe.com
 - source : https://github.com/mirageglobe/zenifyvagrant
 
